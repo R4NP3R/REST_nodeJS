@@ -1,8 +1,11 @@
 import express from 'express';
+import { router } from './routes';
+import 'dotenv/config';
 
 const server = express();
 
-server.get('', (_, res) => {
-  res.send('Olá R4NP3R, with pumped up kicks');
-});
+server.use(express.json());
+
+server.use(router);
+
 export { server };
